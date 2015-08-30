@@ -12,3 +12,4 @@ Window snapping tool meant for 4K monitors without scaling. Right-click + Drag t
 * **Tray icon**
   * **Grid style** - Control the color and transparency of lines, fill, and selection fill
   * **Snap back** - Option to return window to original size when undocked
+* **Multi-monitor support**
