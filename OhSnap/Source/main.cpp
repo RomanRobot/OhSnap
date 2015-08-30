@@ -40,7 +40,7 @@ RECT GetWorkArea()
     bool taskbar_autohide = (taskbar_state & ABS_AUTOHIDE) != 0;
     if( taskbar_autohide == false )
     {
-      if( SHAppBarMessage( ABM_GETTASKBARPOS, &taskbar_data ) == TRUE )
+      if( SHAppBarMessage(ABM_GETTASKBARPOS, &taskbar_data) == TRUE )
       {
         RECT taskbar_rect = taskbar_data.rc;
         switch( taskbar_data.uEdge )
@@ -138,8 +138,8 @@ HWND CreateMessageOnlyWindow( const char* class_name, HINSTANCE instance_handle 
 
   if( window_handle != NULL )
   {
-    SetWindowPos(window_handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE|SWP_NOSIZE);
-    UpdateWindow(window_handle);
+    SetWindowPos( window_handle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE );
+    UpdateWindow( window_handle );
   }
 
   return window_handle;
@@ -156,7 +156,7 @@ bool RegisterMouse( HWND window_handle )
   return RegisterRawInputDevices( &mouse_rid, 1, sizeof(mouse_rid) ) == TRUE;
 }
 
-int APIENTRY WinMain(HINSTANCE instance_handle, HINSTANCE previous_instance_handle, LPSTR command_line, int command_show)
+int APIENTRY WinMain( HINSTANCE instance_handle, HINSTANCE previous_instance_handle, LPSTR command_line, int command_show )
 {
   const char* class_name = "OhSnap";
 

@@ -20,26 +20,34 @@ enum SnapPosition
   RightSide,
   TopSide,
   BottomSide,
+  LeftSideTopBig,
   LeftSideTop,
   LeftSideCenter,
   LeftSideBottom,
+  LeftSideBottomBig,
+  RightSideTopBig,
   RightSideTop,
   RightSideCenter,
   RightSideBottom,
+  RightSideBottomBig,
+  TopSideLeftBig,
   TopSideLeft,
   TopSideCenter,
   TopSideRight,
+  TopSideRightBig,
+  BottomSideLeftBig,
   BottomSideLeft,
   BottomSideCenter,
-  BottomSideRight
+  BottomSideRight,
+  BottomSideRightBig
 };
 
 SnapPosition GetSnapPosition( const RECT& work_area, const POINT& point_in_snap_rect )
 {
-  const int width = (work_area.right-work_area.left) / 2;
-  const int height = (work_area.bottom-work_area.top) / 2;
-  const int x_offset = point_in_snap_rect.x - width;
-  const int y_offset = point_in_snap_rect.y - height;
+  const int width      = (work_area.right-work_area.left) / 2;
+  const int height     = (work_area.bottom-work_area.top) / 2;
+  const int x_offset   = point_in_snap_rect.x - width;
+  const int y_offset   = point_in_snap_rect.y - height;
   const int x_distance = abs(x_offset);
   const int y_distance = abs(y_offset);
 
